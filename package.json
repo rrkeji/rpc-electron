@@ -1,0 +1,38 @@
+{
+  "name": "@rrkeji/rpc-electron",
+  "version": "1.0.3",
+  "description": "Type-safe inter-process communication for Electron",
+  "keywords": [
+    "electron",
+    "typescript",
+    "ipc",
+    "grpc",
+    "main",
+    "renderer"
+  ],
+  "main": "build/index.js",
+  "typings": "build/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "homepage": "https://github.com/rrkeji/rpc-electron#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rrkeji/rpc-electron.git"
+  },
+  "scripts": {
+    "watch": "tsc --watch",
+    "build:prod": "npm run clean && tsc",
+    "clean": "rimraf build",
+    "prepublishOnly": "npm run build:prod",
+    "test": "mocha -r ts-node/register tests/**/*.ts --timeout 5000"
+  },
+  "devDependencies": {
+    "@wexond/rpc-core": "^1.0.3",
+    "electron": "^17.1.2"
+  },
+  "peerDependencies": {
+    "@wexond/rpc-core": "^1.0.3",
+    "electron": "^17.1.2"
+  }
+}
